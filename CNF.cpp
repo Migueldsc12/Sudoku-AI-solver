@@ -59,30 +59,3 @@ CNF read_cnf(const string& filename) {
     sort(cnf.variables.begin(), cnf.variables.end());
     return cnf;
 };
-
-void print_cnf(const CNF& cnf) {
-    cout << "Variables: ";
-    for (int var : cnf.variables) {
-        cout << var << " ";
-    }
-    cout << "\nClausulas:\n";
-    
-    for (const auto& clause : cnf.clauses) {
-        for (int lit : clause) {
-            cout << lit << " ";
-        }
-        cout << "0\n";
-    }
-}
-
-// Pa probar
-// int main() {
-//     string filename = "prueba.cnf";
-//     CNF cnf = read_cnf(filename);
-
-//     cout << "Archivo CNF leido: " << filename << endl;
-//     cout << "Numero de variables: " << cnf.variableCount << endl;
-//     cout << "Numero de clausulas: " << cnf.clauseCount << endl;
-
-//     return 0;
-// }
