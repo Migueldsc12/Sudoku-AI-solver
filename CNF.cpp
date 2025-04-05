@@ -79,11 +79,10 @@ void print_cnf(const CNF& cnf) {
 // int main() {
 //     string filename = "prueba.cnf";
 //     CNF cnf = read_cnf(filename);
-    
+
 //     cout << "Archivo CNF leido: " << filename << endl;
 //     cout << "Numero de variables: " << cnf.variableCount << endl;
 //     cout << "Numero de clausulas: " << cnf.clauseCount << endl;
-    
-    
+
 //     return 0;
 // }
