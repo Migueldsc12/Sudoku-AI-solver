@@ -2,7 +2,7 @@
 *.exe
 *.out
 *.bin
-solver  
+dpllSolver
 sudokuSolver
 
 # Archivos objeto y de compilación
