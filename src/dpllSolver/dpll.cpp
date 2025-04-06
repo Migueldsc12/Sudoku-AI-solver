@@ -163,10 +163,29 @@ void solve(const string& filename) {
     
     if (result) {
         cout << "SATISFIABLE" << endl;
+        ofstream output("modelSolution.cnf");
+        if (!output.is_open()) {
+            cerr << "Error al crear archivo de salida" << endl;
+            return;
+        }
+        output << "p cnf "<< cnf->variableCount << " " << cnf->clauseCount << endl;
+        set<int> sorted_vars;
+        for (const auto& [var, value] : cnf->model) {
+            sorted_vars.insert(var);
+        }
+        for(int var:sorted_vars){
+            output << var << " " << (cnf->model[var] ? "T" : "F") << endl;
+        }
+
+        output.close();
     } else {
         cout << "INSATISFIABLE" << endl;
     }
+
+    
 }
+
+
 
 int main(int argc, char* argv[]) {
 
@@ -184,6 +203,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     test_file.close();
+    cout<< "calculating..."<< endl;
 
     auto start = std::chrono::high_resolution_clock::now();
     solve(filename);
