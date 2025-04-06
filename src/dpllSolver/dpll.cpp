@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 struct PureSymbolResult {
     unordered_map<int, int> positiveCount;
     unordered_map<int, int> negativeCount;
@@ -160,58 +159,6 @@ bool dpll(const shared_ptr<CNF>& cnf) {
 void solve(const string& filename) {
     auto cnf = read_cnf(filename);
     bool result = dpll(cnf);
-    
-    if (result) {
-        cout << "SATISFIABLE" << endl;
-        ofstream output("modelSolution.cnf");
-        if (!output.is_open()) {
-            cerr << "Error al crear archivo de salida" << endl;
-            return;
-        }
-        output << "p cnf "<< cnf->variableCount << " " << cnf->clauseCount << endl;
-        set<int> sorted_vars;
-        for (const auto& [var, value] : cnf->model) {
-            sorted_vars.insert(var);
-        }
-        for(int var:sorted_vars){
-            output << var << " " << (cnf->model[var] ? "T" : "F") << endl;
-        }
 
-        output.close();
-    } else {
-        cout << "INSATISFIABLE" << endl;
-    }
-
-    
+    cout << (result ? "SATISFIABLE" : "INSATISFIABLE") << endl;
 }
-
-
-
-// int main(int argc, char* argv[]) {
-
-//     if (argc != 2) {
-//         cerr << "Uso: " << argv[0] << " <archivo.cnf>" << endl;
-//         cerr << "Ejemplo: " << argv[0] << " formula.cnf" << endl;
-//         return 1;
-//     }
-
-//     string filename = argv[1];
-    
-//     ifstream test_file(filename);
-//     if (!test_file.good()) {
-//         cerr << "Error: No se puede abrir el archivo '" << filename << "'" << endl;
-//         return 1;
-//     }
-//     test_file.close();
-//     cout<< "calculating..."<< endl;
-
-//     auto start = std::chrono::high_resolution_clock::now();
-//     solve(filename);
-//     auto stop = std::chrono::high_resolution_clock::now();
-
-//     std::chrono::duration<double> duration = stop - start;
-//     std::cout << "Tiempo de ejecucion: " << duration.count() << " s\n";
-
-//     return 0;
-
-// }
