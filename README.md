@@ -27,7 +27,7 @@ en el algoritmo DPLL.
   simplificado.
 
 
-  ### 2.2 sudokuSolver:
+  ### 2.2 `sudokuSolver`:
   Se ejecuta el comando:
   ```
   ./sudokuSolver [instancia] 
@@ -56,7 +56,7 @@ en el algoritmo DPLL.
   ```
 ## 3. Salida del programa
 
-  ### 3.1 dpllSolver:
+  ### 3.1 `dpllSolver`:
   La salida tiene dos lineas. En la primera debe imprimir la palabra `SATISFIABLE` o `UNSATISFIABLE`, 
   si el problema de entrada es satisfacible o no. La segunda linea indica el tiempo usado por el resolvedor, 
   en segundos, para obtener la solucion.
@@ -67,7 +67,7 @@ en el algoritmo DPLL.
   Tiempo de ejecucion: 2.3 s
   ```
 
-  ### 3.2 sudokuSolver:
+  ### 3.2 `sudokuSolver`:
   La salida de sudokuSolver consiste en una representacion del tablero inicial,
   su formato lineal, el numero de variables y clausulas generadas, una representacion
   de la solucion del tablero, el formato lineal de dicha solucion y el tiempo que tardo
