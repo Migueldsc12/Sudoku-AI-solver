@@ -187,31 +187,31 @@ void solve(const string& filename) {
 
 
 
-int main(int argc, char* argv[]) {
+// int main(int argc, char* argv[]) {
 
-    if (argc != 2) {
-        cerr << "Uso: " << argv[0] << " <archivo.cnf>" << endl;
-        cerr << "Ejemplo: " << argv[0] << " formula.cnf" << endl;
-        return 1;
-    }
+//     if (argc != 2) {
+//         cerr << "Uso: " << argv[0] << " <archivo.cnf>" << endl;
+//         cerr << "Ejemplo: " << argv[0] << " formula.cnf" << endl;
+//         return 1;
+//     }
 
-    string filename = argv[1];
+//     string filename = argv[1];
     
-    ifstream test_file(filename);
-    if (!test_file.good()) {
-        cerr << "Error: No se puede abrir el archivo '" << filename << "'" << endl;
-        return 1;
-    }
-    test_file.close();
-    cout<< "calculating..."<< endl;
+//     ifstream test_file(filename);
+//     if (!test_file.good()) {
+//         cerr << "Error: No se puede abrir el archivo '" << filename << "'" << endl;
+//         return 1;
+//     }
+//     test_file.close();
+//     cout<< "calculating..."<< endl;
 
-    auto start = std::chrono::high_resolution_clock::now();
-    solve(filename);
-    auto stop = std::chrono::high_resolution_clock::now();
+//     auto start = std::chrono::high_resolution_clock::now();
+//     solve(filename);
+//     auto stop = std::chrono::high_resolution_clock::now();
 
-    std::chrono::duration<double> duration = stop - start;
-    std::cout << "Tiempo de ejecucion: " << duration.count() << " s\n";
+//     std::chrono::duration<double> duration = stop - start;
+//     std::cout << "Tiempo de ejecucion: " << duration.count() << " s\n";
 
-    return 0;
+//     return 0;
 
-}
+// }

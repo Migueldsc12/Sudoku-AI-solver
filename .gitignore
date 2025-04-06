@@ -3,6 +3,7 @@
 *.out
 *.bin
 solver  
+sudokuSolver
 
 # Archivos objeto y de compilación
 *.o
