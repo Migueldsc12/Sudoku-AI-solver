@@ -1,0 +1,123 @@
+
+====      Descripción del Proyecto     ====
+
+El proyecto consiste en dos actividades:
+1. Implementar un resolvedor para el problema de SAT el cual debe estar basado 
+en el algoritmo DPLL.
+2. Implementar un resolvedor para Sudoku, que este basado en un resolvedor de SAT.
+
+
+====      Instrucciones para Compilar y Ejecutar    ====
+
+1. Compilación:
+   - Abrir una terminal en la carpeta donde se encuentra el archivo `makefile`.
+   - Ejecuta el siguiente comando para compilar los programas:
+     ```
+     make all
+     ```
+   - Esto generará dos ejecutables: `dpllSolver` y `sudokuSolver`
+
+2. Ejecución:
+
+    2.1 dpllSolver:
+        Se ejecuta el comando:
+        ```
+        ./dpllSolver <archivo-cnf>
+        ```
+        donde `<archivo-cnf>` es un archivo con una fórmula booleana en CNF, en el formato de DIMACS
+        simplificado.
+
+
+    2.2 sudokuSolver:
+        Se ejecuta el comando:
+        ```
+        ./sudokuSolver [instancia]
+        ```
+        donde `instancia` es un string que es una representacion de una instancia de Sudoku.
+        En el string las filas del Sudoku se colocan en una sola fila, y cuando en la posici ́on de la
+        instancia hay un espacio en blanco se coloca un punto, y en caso contrario el numero correspondiente.
+
+        Por ejemplo, el string:
+
+        3.7.4...........918........4.....7.....16.......25..........38..9....5...2.6.....
+
+        Representa al tablero:
+
+        3 . 7 | . 4 . | . . .
+        . . . | . . . | . 9 1
+        8 . . | . . . | . . .
+        ------+-------+------
+        4 . . | . . . | 7 . .
+        . . . | 1 6 . | . . .
+        . . . | 2 5 . | . . .
+        ------+-------+------
+        . . . | . . . | 3 8 .
+        . 9 . | . . . | 5 . .
+        . 2 . | 6 . . | . . .
+
+3. Salida del programa
+
+    3.1 dpllSolver:
+        La salida de dpllSolver tiene dos lıneas. En la primera
+        debe imprimir la palabra SATISFIABLE o UNSATISFIABLE, si el problema de entrada 
+        es satisfacible o no. La segunda lınea indica el tiempo usado por el resolvedor, 
+        en segundos, para obtener la solucion.
+
+        Ejemplo de salida:
+
+        SATISFIABLE
+        Tiempo de ejecucion: 2.3 s
+
+
+    3.2 sudokuSolver:
+        La salida de sudokuSolver consiste en una representacion del tablero inicial,
+        su formato lineal, el numero de variables y clausulas generadas, una representacion
+        de la solucion del tablero, el formato lineal de dicha solucion y el tiempo que tardo
+        en hallar la misma.
+
+        Ejemplo de salida:
+
+        Sudoku de entrada:
+        . . . | . . . | . 1 2 
+        . . . | . . . | . . 3 
+        . . 2 | 3 . . | 4 . . 
+        ------+-------+------
+        . . 1 | 8 . . | . . 5 
+        . 6 . | . 7 . | 8 . . 
+        . . . | . . 9 | . . . 
+        ------+-------+------
+        . . 8 | 5 . . | . . . 
+        9 . . | . 4 . | 5 . . 
+        4 7 . | . . 6 | . . . 
+
+        Formato lineal:
+        .......12........3..23..4....18....5.6..7.8.......9.....85.....9...4.5..47...6...
+        Variables generadas: 729
+        Clausulas generadas: 11766
+
+        Solucion encontrada:
+        8 3 9 | 4 6 5 | 7 1 2 
+        1 4 6 | 7 8 2 | 9 5 3 
+        7 5 2 | 3 9 1 | 4 8 6 
+        ------+-------+------
+        3 9 1 | 8 2 4 | 6 7 5 
+        5 6 4 | 1 7 3 | 8 2 9 
+        2 8 7 | 6 5 9 | 3 4 1 
+        ------+-------+------
+        6 2 8 | 5 3 7 | 1 9 4 
+        9 1 3 | 2 4 8 | 5 6 7 
+        4 7 5 | 9 1 6 | 2 3 8 
+
+        Formato lineal:
+        839465712146782953752391486391824675564173829287659341628537194913248567475916238
+
+        Tiempo de resolucion: 9.7520 segundos
+
+
+====      Créditos     ====
+
+Este proyecto fue desarrollado como parte del curso CI5437 por los estudiantes:
+
+    - Laura Parilli, 17-10778
+    - Miguel Salomon, 19-10274
+    
