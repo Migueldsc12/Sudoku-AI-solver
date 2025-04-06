@@ -188,7 +188,10 @@ int main(int argc, char* argv[]) {
     auto start = std::chrono::high_resolution_clock::now();
     solve(filename);
     auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-    cout << "Tiempo de ejecucion: " << duration.count() << " s\n";
+
+    std::chrono::duration<double> duration = stop - start;
+    std::cout << "Tiempo de ejecucion: " << duration.count() << " s\n";
+
     return 0;
+
 }
