@@ -28,7 +28,7 @@ void printSudoku(const string& sudoku) {
     }
 
     // Solución en una línea
-    cout << "\nSolucion en formato lineal:\n";
+    cout << "\nFormato lineal:\n";
     for (char c : sudoku) {
         cout << c;
     }
