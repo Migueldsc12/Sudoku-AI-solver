@@ -2,10 +2,12 @@
 #include <vector>
 #include <string>
 #include <unordered_set>
+#include <chrono>  // Para medir el tiempo
 #include "../dpllSolver/CNF.h"
 #include "../dpllSolver/dpll.h"
 
 using namespace std;
+using namespace std::chrono;  // Para medir el tiempo
 
 const int D = 3;
 const int N = D*D;
@@ -161,13 +163,24 @@ int main(int argc, char* argv[]) {
 
     auto cnf = sudokuToCNF(sudoku);
     
-    if (dpll(cnf)) {
+    // Iniciar medición de tiempo
+    auto start = high_resolution_clock::now();
+    
+    bool hasSolution = dpll(cnf);
+    
+    // Finalizar medición de tiempo
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(stop - start);
+    
+    if (hasSolution) {
         string solution = decodeSolution(cnf->model);
         cout << "\nSolucion encontrada:" << endl;
         printSudoku(solution);
     } else {
         cout << "\nNo se encontro solucion." << endl;
     }
+    
+    cout << "\nTiempo de resolucion: " << duration.count() << " milisegundos" << endl;
 
     return 0;
 }
