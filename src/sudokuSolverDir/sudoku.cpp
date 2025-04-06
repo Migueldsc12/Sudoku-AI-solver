@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_set>
 #include <chrono>  // Para medir el tiempo
+#include <iomanip> // Para setprecision
 #include "../dpllSolver/CNF.h"
 #include "../dpllSolver/dpll.h"
 
@@ -170,7 +171,7 @@ int main(int argc, char* argv[]) {
     
     // Finalizar medición de tiempo
     auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<milliseconds>(stop - start);
+    duration<double> duration = stop - start;
     
     if (hasSolution) {
         string solution = decodeSolution(cnf->model);
@@ -180,7 +181,10 @@ int main(int argc, char* argv[]) {
         cout << "\nNo se encontro solucion." << endl;
     }
     
-    cout << "\nTiempo de resolucion: " << duration.count() << " milisegundos" << endl;
+    // Imprimir tiempo con 4 decimales
+    cout << fixed << setprecision(4);
+    cout << "\nTiempo de resolucion: " << duration.count() << " segundos" << endl;
+    cout << scientific;  // Restaurar formato científico por defecto
 
     return 0;
 }
