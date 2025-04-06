@@ -9,12 +9,12 @@ RM = rm -f
 all: dpllSolver sudokuSolver
 
 # DPLL Solver target
-dpllSolver: dpllSolver/solver.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
-	$(CXX) $(CXXFLAGS) -o dpllSolver dpllSolver/solver.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
+dpllSolver: dpllSolverDir/solver.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
+	$(CXX) $(CXXFLAGS) -o dpllSolver dpllSolverDir/solver.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
 
 # Sudoku Solver target
-sudokuSolver: sudokuSolverDir/sudoku.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
-	$(CXX) $(CXXFLAGS) -o sudokuSolver sudokuSolverDir/sudoku.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
+sudokuSolver: sudokuSolverDir/sudoku.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
+	$(CXX) $(CXXFLAGS) -o sudokuSolver sudokuSolverDir/sudoku.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
 
 # Clean target
 clean:
