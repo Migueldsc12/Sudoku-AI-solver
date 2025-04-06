@@ -162,18 +162,9 @@ void solve(const string& filename) {
     bool result = dpll(cnf);
     
     if (result) {
-        cout << "SATISFACTIBLE\nModelo encontrado:\n";
-        set<int> sorted_vars;
-        for (const auto& [var, value] : cnf->model) {
-            sorted_vars.insert(var);
-        }
-    
-    // Imprimir en orden ascendente
-        for (int var : sorted_vars) {
-        cout << var << " = " << (cnf->model.at(var) ? "true" : "false") << "\n";
-        }
+        cout << "SATISFIABLE" << endl;
     } else {
-        cout << "INSATISFACTIBLE\n";
+        cout << "INSATISFIABLE" << endl;
     }
 }
 
