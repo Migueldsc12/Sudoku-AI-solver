@@ -1,0 +1,54 @@
+# Archivos ejecutables
+*.exe
+*.out
+*.bin
+solver  
+
+# Archivos objeto y de compilación
+*.o
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# Archivos generados por el compilador
+*.gcno
+*.gcda
+*.gcov
+
+# Archivos de depuración
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Archivos de IDE/Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de construcción
+build/
+dist/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Archivos de log
+*.log
+
+# Archivos temporales
+*.tmp
+temp/
+
+# Archivos específicos del proyecto (personaliza según necesites)
+Leeme.txt  # Si es generado
+*.tar.xz   # Archivos comprimidos de entrega
