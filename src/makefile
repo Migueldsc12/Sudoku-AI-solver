@@ -13,8 +13,8 @@ dpllSolver: dpllSolverDir/solver.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cp
 	$(CXX) $(CXXFLAGS) -o dpllSolver dpllSolverDir/solver.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
 
 # Sudoku Solver target
-sudokuSolver: sudokuSolverDir/sudoku.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
-	$(CXX) $(CXXFLAGS) -o sudokuSolver sudokuSolverDir/sudoku.cpp dpllSolver/CNF.cpp dpllSolver/dpll.cpp
+sudokuSolver: sudokuSolverDir/sudoku.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
+	$(CXX) $(CXXFLAGS) -o sudokuSolver sudokuSolverDir/sudoku.cpp dpllSolverDir/CNF.cpp dpllSolverDir/dpll.cpp
 
 # Clean target
 clean:

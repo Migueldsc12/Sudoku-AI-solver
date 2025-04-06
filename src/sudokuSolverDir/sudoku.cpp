@@ -4,8 +4,8 @@
 #include <unordered_set>
 #include <chrono>  // Para medir el tiempo
 #include <iomanip> // Para setprecision
-#include "../dpllSolver/CNF.h"
-#include "../dpllSolver/dpll.h"
+#include "../dpllSolverDir/CNF.h"
+#include "../dpllSolverDir/dpll.h"
 
 using namespace std;
 using namespace std::chrono;  // Para medir el tiempo
